@@ -6,12 +6,22 @@ public class Game {
 	  
 	  public Game() {
 		  
-		  goalX=0;
-		  goalY=7;
-		  playerX=0;
-		  playerY=3;
+		  goalX=getRandomNumber();
+		  goalY=getRandomNumber();
+		  playerX=getRandomNumber();
+		  playerY=getRandomNumber();
+		  while (goalX == playerX && goalY == playerY) {
+			  playerX=getRandomNumber();
+			  playerY=getRandomNumber();
+		  }
+		  if (playerX < 5)
+			  playerX = 0;
+		  else
+			  playerX = 10;
+		  
 		  boardW=10;
 		  boardH=10;
+		  
 	  }
 	  
 	  public double getDistance() {
@@ -35,6 +45,11 @@ public class Game {
 			  System.out.println("You are at the end of the world");
 			
 		  }
+	  
+	  public int getRandomNumber() {
+		    return (int) ((Math.random() * (11 - 0)) + 0);
+		}
+	  
 //	  public void checkIfReachGoal()
 //	  {
 //		  if (goalX == playerX && playerY==goalY)
