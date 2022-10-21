@@ -8,9 +8,6 @@ public class Runner {
 		Game runningGame = new Game();   
         UserInput ui= new UserInput();
         
-//        System.out.println(ui.getUserInput());
-        
-        System.out.println(runningGame.getDistance());
         
         while(runningGame.getDistance() != 0) {
         
