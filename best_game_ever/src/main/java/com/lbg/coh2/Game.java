@@ -2,9 +2,9 @@ package com.lbg.coh2;
 
 public class Game {
 	
-      private int goalX, goalY,playerX, playerY,boardW,boardH;
+      private double goalX, goalY,playerX, playerY,boardW,boardH;
 	  
-	  public void Game() {
+	  public Game() {
 		  
 		  goalX=0;
 		  goalY=7;
@@ -16,30 +16,30 @@ public class Game {
 	  
 	  public double getDistance() {
 			
-			return (Math.sqrt(Math.pow(playerX-goalX,2) + Math.pow(playerY- goalY,2)));   
+		  return (Math.sqrt(Math.pow(playerX-goalX,2) + Math.pow(playerY- goalY,2)));  
 		  }
 	  
 	  public void updatePosition(String move) {
 		  
 
-		  if ((move.equals("Left") || move.equals("West")) && playerX != 0)
+		  if ((move.equalsIgnoreCase("Left") || move.equalsIgnoreCase("West")) && playerX != 0)
 			  playerX -- ;
 		  //TODO use getters and setters
-		  else if((move.equals("Right") || move.equals("East")) && playerX !=boardW)
+		  else if((move.equalsIgnoreCase("Right") || move.equalsIgnoreCase("East")) && playerX !=boardW)
 			  playerX ++ ;
-		  else if((move.equals("Down") || move.equals("South")) && playerY !=0)
+		  else if((move.equalsIgnoreCase("Down") || move.equalsIgnoreCase("South")) && playerY !=0)
 			  playerY -- ;
-		  else if((move.equals("Up") || move.equals("North")) && playerY !=boardH)
+		  else if((move.equalsIgnoreCase("Up") || move.equalsIgnoreCase("North")) && playerY !=boardH)
 			  playerY ++ ;
 		  else
-			  System.out.print("You are at the end of the world");
+			  System.out.println("You are at the end of the world");
 			
 		  }
-	  public void checkIfReachGoal()
-	  {
-		  if (goalX == playerX && playerY==goalY)
-			  System.out.print("You Win");
-	  }
+//	  public void checkIfReachGoal()
+//	  {
+//		  if (goalX == playerX && playerY==goalY)
+//			  System.out.print("You Win");
+//	  }
 		  
 	  }
 	  
